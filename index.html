@@ -71,8 +71,14 @@
 
       <!-- Aperçu des options -->
       <section>
-        <h3 class="mb-4">Aperçu <img id="imgVisage" alt="Visage" /></h3>
-
+        <h3 class="mb-4">Aperçu</h3>
+        <h4 class="mb-4">
+          <img id="imgVisage" alt="Visage" /><img
+            id="imgZone"
+            height="130px"
+            alt="Zone"
+          />
+        </h4>
         <div class="row g-3 mb-4">
           <div class="col-md-4">
             <label for="selectParametre" class="form-label">Paramètre :</label>
@@ -168,13 +174,25 @@
           remplirSelect("selectZone", listeZone);
           remplirSelect("selectVisage", listeVisage);
 
-          var output = document.getElementById('result');
-          output.innerHTML = JSON.stringify(recuperationValeursVariable(result, 0), null, 2);
+          var output = document.getElementById("result");
+          output.innerHTML = JSON.stringify(
+            recuperationValeursVariable(result, 0),
+            null,
+            2
+          );
         };
         reader.readAsArrayBuffer(file);
       }
 
+      var selectVisage = document.getElementById("selectVisage");
+      var imagejs = document.getElementById("imgVisage");
+
+
+      var selectZone = document.getElementById("selectZone");
+      var imageZone = document.getElementById("imgZone");
+
       inputFile.addEventListener("change", previewXLSFile, false);
+      imagejs.src = "./img/visage1.jpg";
 
       function remplirSelect(idSelect, listeOption) {
         var divSelect = document.querySelector("#" + idSelect);
@@ -186,14 +204,30 @@
         });
       }
 
-      // Mettre à jour l'image lorsque l'utilisateur change de visage
-      var selectVisage = document.getElementById("selectVisage");
-      var imagejs = document.getElementById("imgVisage");
       selectVisage.addEventListener("change", function () {
         var selectedValue = selectVisage.value;
         if (selectedValue) {
           imagejs.src = "./img/" + selectedValue + ".jpg";
           imagejs.alt = selectedValue;
+        }
+      });
+
+      function Param() {
+        var selectParam = document.getElementById("selectParametre");
+          var selectedValue = selectParametre.value;
+          if (selectedValue) {
+            console.log(selectedValue);
+            return(selectedValue);
+          }
+        };
+
+      selectParametre.addEventListener("change",Param() );
+
+      selectZone.addEventListener("change", function () {
+        var selectedValue = selectZone.value;
+        if (selectedValue) {
+          imageZone.src = "./pictos/" + Param() + selectedValue + ".svg";
+          imageZone.alt = selectedValue;
         }
       });
     </script>
