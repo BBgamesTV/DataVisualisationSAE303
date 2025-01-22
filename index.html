@@ -10,7 +10,27 @@
 </head>
 <body>
 
-<div class="container py-5">
+<header>
+    <h1>Visualisation de Données pour le Diagnostic de l'Autisme</h1>
+</header>
+
+<div class="container">
+    <section id="contexte">
+        <h2>Contexte du Projet</h2>
+        <p>Ce projet s'inscrit dans le cadre de la SAE 303, visant à utiliser l'eye-tracking pour identifier des bio-indicateurs discriminants dans le diagnostic de l'autisme. L'objectif est de développer un site interactif permettant la visualisation des données collectées.</p>
+    </section>
+    <section id="visualisation">
+        <h2>Visualisation des Données</h2>
+        <p>Les données recueillies sont affichées sous forme de graphiques interactifs permettant une analyse détaillée des zones explorées par les enfants lors du test d'eye-tracking.</p>
+        <a href="#btn-primary" class="cta-button">Explorer les Visualisations</a>
+    </section>
+    <section id="resultats">
+        <h2>Résultats et Analyse</h2>
+        <p>Les résultats montrent des différences significatives dans les comportements visuels des enfants autistes par rapport aux enfants avec développement typique. Les zones telles que les yeux et la bouche sont particulièrement analysées.</p>
+    </section>
+</div>
+
+<div class="container py-5" id="btn-primary">
     <!-- Formulaire d'upload -->
     <form method="post" action="/upload-xlsx" enctype="multipart/form-data" class="mb-4">
         <div class="mb-3">
@@ -47,6 +67,10 @@
         </div>
     </section>
 </div>
+
+<footer>
+    <p>&copy; 2025 - Projet SAE 303 - IUT de Blois</p>
+</footer>
 
 <script>
     // fonction qui renvoie les valeurs d'une colonne donnée d'indice (indice) dans un tableau 2D (tab) avec élimination des valeurs vides
