@@ -77,6 +77,9 @@ function renderVisualData() {
   const variable = document.getElementById("variableSelect").value;
   const visage = document.getElementById("visageSelect").value;
 
+  document.getElementById("imgVisage").src="../assets/img/visages/"+visage+".jpg";
+
+
   const variableName =
     variable === "TTT" ? `${variable}_${visage}` : `${variable}_${zone}_${visage}`;
   const variableIndex = variableList.indexOf(variableName);
