@@ -79,6 +79,8 @@ function renderVisualData() {
 
   document.getElementById("imgVisage").src="../assets/img/visages/"+visage+".jpg";
 
+  document.getElementById("imgPictos").src="../assets/img/pictos/"+variable+"_"+zone+".svg";
+
 
   const variableName =
     variable === "TTT" ? `${variable}_${visage}` : `${variable}_${zone}_${visage}`;
